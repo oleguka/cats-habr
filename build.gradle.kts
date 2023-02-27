@@ -12,7 +12,7 @@ plugins {
 
 group = "ru.habr"
 version = "1.0.0"
-//java.sourceCompatibility = JavaVersion.VERSION_11
+java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
     mavenCentral()
@@ -26,7 +26,6 @@ val allureVersion = "2.19.0"
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-web")
-//    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     runtimeOnly("com.h2database:h2")
@@ -77,9 +76,4 @@ tasks.withType<Test>() {
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "11"
     kotlinOptions.freeCompilerArgs = listOf("-Xjsr305=strict")
-
-//    kotlinOptions {
-//        freeCompilerArgs = listOf("-Xjsr305=strict")
-//        jvmTarget = "1.8"
-//    }
 }
